@@ -1,49 +1,156 @@
-.container {
-    display: flex;
-    flex-flow: row;
-    width: 1200px;
-    height: 920px;
-    margin: auto;
-    
+:root {
+    --gray: rgb(36, 36, 36);
+    --natural-white: rgb(241, 239, 228);
 }
 
-.logo-area{
+@font-face {
+    font-family: odin-font;
+    src: url(fonts/Norse-Bold.otf);
+}
+
+body{
+    background-color: var(--gray);
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.logo-area {
     flex: 1;
     background-image: url(images/halie-west-bTzpau9mKT4-unsplash.jpg);
-    background-size:cover;
-  
+    background-position: center;
+    background-size: cover;
+    color: aliceblue;
+    font-family: odin-font;
+    font-size: 5rem;
 }
 
-.form-area{
+.logo-container {
+    display: flex;
+    position: relative;
+    top: 200px;
+    background-color: rgba(0, 0, 0, 0.632);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo-container img{
+    width: 100px;
+    display: inline;
+}
+
+.main {
     flex: 2;
     display: flex;
     flex-flow: column;
-    background-color: beige;
+    background-color: var(--natural-white);   
 }
 
-.top{
-    flex: 1;
+.top {
+    display: flex;
+    flex-flow: column;
+    flex: 1 0 1;
+
+    padding: 200px 50px 50px 50px;
 }
 
-.form-container{
-    flex: 0 1 0;
-
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.279);
+.form-container {
+    flex: 0 1 1;
+    background-color: rgb(244, 244, 244);
+    padding: 50px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.17);
 }
 
-.bottom{
-    flex: 1;
+form{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.form-container div{
+    margin: 10px 60px 10px 0px;
+    display: flex;
+    flex-flow: column;
+}
+
+label {
+    margin: 5px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.65);
 }
 
 input{
-    margin: 5px;
+    font-size: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 4px;
 }
 
-p{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
+input:focus {
+    outline-style: none;
+    border: 2px solid rgb(43, 43, 132);
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.652);
 }
 
-.logo{
-    font-family: ;
+input:not(:focus):not(:placeholder-shown):invalid,
+.error {
+  box-shadow: inset 0 -3px 0 0px rgb(182, 68, 68);
+} 
+
+input:valid {
+    border: 2px solid rgb(7, 199, 0);
 }
+
+
+.bottom {
+    flex: 1 0 1;
+    padding: 50px;
+}
+
+button{
+   display: block;
+   margin: 0px 0px 30px 0px;
+   padding: 15px 45px;
+   border-radius: 7px;
+   border: 1px solid gray;
+
+   background-color: rgba(19, 60, 10, 0.738);
+   color: rgb(249, 240, 229);
+   font-size: 1rem;
+   font-weight: 600;
+}
+
+button:hover{
+   cursor: pointer;
+   background-color: rgba(29, 73, 19, 0.738);
+   border: 1px solid rgb(77, 77, 77);
+ }
+
+ button:active{
+    box-shadow: 2px 2px 5px black;
+ }
+
+.bottom p, a{
+    display: inline;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+@media screen and (max-width: 800px) {
+  
+    .container{
+      flex-direction: column;
+    }
+
+  }
